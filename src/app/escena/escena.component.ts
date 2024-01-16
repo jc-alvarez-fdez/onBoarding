@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IStep } from '../interfaces/i-step-interface';
 
 @Component({
   selector: 'app-escena',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./escena.component.scss']
 })
 export class EscenaComponent {
+
+ @Input()
+  public frasesLista: IStep [] = [
+    {
+      title: "titulo",
+      descripction:"descripcion"
+    }
+  ];
+
+
 
 }
