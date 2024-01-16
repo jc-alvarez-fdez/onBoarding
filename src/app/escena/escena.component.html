@@ -1,7 +1,21 @@
-<ul>
+
+<!-- Implementació de l'exercici 02
+
+  <ul>
     <li  *ngFor="let frase of frasesLista">
       <h3>{{ frase.title }}</h3>
       <p>{{ frase.descripction }} </p>
       <br><br>
     </li>
 </ul>
+______________________________________ -->
+<div class="container-fluid">
+  <div *ngFor="let frase of frasesLista" class="card">
+    <img src="{{ frase.img }}" [ngStyle]="{ 'background-color': frase.bgcolor }" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h3 class="card-title">{{ frase.title }}</h3>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>

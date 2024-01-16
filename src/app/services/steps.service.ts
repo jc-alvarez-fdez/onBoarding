@@ -6,19 +6,31 @@ import { IStep } from '../interfaces/i-step-interface';
 })
 export class StepsService {
 
-  public frases: IStep [] = [
+  public pathImg: string = "../assets/images";
+
+  public frases: IStep[] = [
 
     {
       title: "Dedica moltes hores",
-        descripction: "Un mínim de 30 hores a la setmana. Si no en tens prou, hauràs de dedicar-li més hores. Al principi sembla impossible, però notaràs una millora ràpidament."
+      descripction: "Un mínim de 30 hores a la setmana. Si no en tens prou, hauràs de dedicar-li més hores. Al principi sembla impossible, però notaràs una millora ràpidament.",
+      img: `${this.pathImg}/time_managment.svg`,
+      alt: "Il·lustració d'una persona organitzant el temps de treball",
+      bgcolor: "#4da2a9"
+
     },
     {
       title: "Programa projectes propis:",
-      descripction: "Més val 10 hores treballant en projectes propis, que 10 hores mirant tutorials. La motivació i la implicació en el projecte ajudarà a accelerar el teu aprenentatge."
+      descripction: "Més val 10 hores treballant en projectes propis, que 10 hores mirant tutorials. La motivació i la implicació en el projecte ajudarà a accelerar el teu aprenentatge.",
+      img: `${this.pathImg}/programming.svg`,
+      alt: "Il·lustració d'una persona programant al seu ordinador",
+      bgcolor: "#d3d4d9"
     },
     {
       title: "Procura descansar:",
-      descripction: "Descansar bé i desconnectar són vitals. D'aquesta manera reduiràs l'estrès i l'ansietat. Milloraràs la teva concentració i consolidaràs el teu aprenentatge."
+      descripction: "Descansar bé i desconnectar són vitals. D'aquesta manera reduiràs l'estrès i l'ansietat. Milloraràs la teva concentració i consolidaràs el teu aprenentatge.",
+      img: `${this.pathImg}/meditation.svg`,
+      alt:"Il·lustració d'una persona fent exercicis de relaxació",
+      bgcolor: "#ffd167"
     }
   ]
 
