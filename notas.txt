@@ -1,0 +1,59 @@
+_______________________
+1. Interfaz IStep:
+
+La interfaz IStep define la estructura de los objetos de frase.
+Cada frase debe tener al menos un título y una descripción.
+Las propiedades img, alt, y bgcolor son opcionales (operador ?) para poder realizar el ejercicio 2: enseñar título y frases en un listado mediante *ngFor.
+
+_______________________
+2. Servicio StepsService:
+
+  El servicio StepsService utiliza la interfaz IStep para definir el tipo de datos de las frases.
+  Añado la propiedad pathImg para definir la ruta base de las imágenes.
+  Creo un array "frases" que contiene objetos de frase con títulos, descripciones, imágenes, alt y colores de fondo.
+
+_______________________
+3. Componente Home
+
+En el componente Home uutilizo el componente Escena y paso las propiedades "frases" y "currentStepIndex" como entradas (@Input).
+
+    _______________________
+    3.1. home.component.html
+
+    Utilizo la etiqueta <app-escena> para incluir el componente Escena (hijo) en el template del componente Home (padre).
+    Paso las variables "frases" y "currentStepIndex" al componente hijo mediante el enlace de propiedades ([frases]="frases" y [currentStepIndex]="currentStepIndex").
+
+    _______________________
+    3.2. home.component.ts
+
+    Declaro las variables "frases" y "currentStepIndex" en la clase "HomeComponent".
+    En el constructor, obtobtengo las frases del servicio "StepsService" y las asigno a la propiedad frases.
+    Esta información se utilizará para pasar al componente hijo (Escena).
+
+_______________________
+4. Componente Escena
+
+    _______________________
+    4.1. escena.component.html
+
+    Utilizando las variables obtenidas del getter "currentStep", (title, description, img, alt, y bgcolor) para mostrar la información de la frase actual.
+
+    Uso de "[ngStyle]" para cambiar el color de fondo del card-header y el color del texto del card-title en base al bgcolor actual.
+
+    En los botones de "position-indicators" utilizo *ngFor para iterar sobre las frases y mostrar indicadores de posición que funcionen como enlaces.
+    Uso [ngClass] y [ngStyle] para aplicar estilos basados en  el  bgcolor actual.
+
+    Los botones de "prev_next" se muestran condicionalmente dependiendo de si estamos en la primera o última frase.
+
+    _______________________
+    4.2. escena.component.ts
+
+    Definon las propiedades frases y currentStepIndex como entradas (@Input) para recibir datos desde el componente padre (Home).
+
+    El getter "currentStep" devuelve la frase actual basándose en el índice actual.
+
+    El método "nextStep" avanza al siguiente paso si no estamos en la última frase.
+
+    El método "prevStep" retrocede al paso anterior si no estamos en la primera frase.
+
+    El método "goStep" nos permite ir directamente a una frase específica.

@@ -1,21 +1,24 @@
 
-<!-- Implementació de l'exercici 02
-
-  <ul>
-    <li  *ngFor="let frase of frasesLista">
-      <h3>{{ frase.title }}</h3>
-      <p>{{ frase.descripction }} </p>
-      <br><br>
-    </li>
-</ul>
-______________________________________ -->
 <div class="container-fluid">
-  <div *ngFor="let frase of frasesLista" class="card">
-    <img src="{{ frase.img }}" [ngStyle]="{ 'background-color': frase.bgcolor }" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h3 class="card-title">{{ frase.title }}</h3>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="card">
+    <div class="card-header" [ngStyle]="{ 'background-color': currentStep.bgcolor }">
+      <img src="{{ currentStep.img }}" class="card-img-top" alt="{{ currentStep.alt }}">
     </div>
-  </div>
-</div>
+    <div class="card-body">
+      <h3 class="card-title" [ngStyle]="{ 'color': currentStep.bgcolor }">{{ currentStep.title }} </h3>
+      <p class="card-text">{{ currentStep.description }}</p>
+    </div>
+    <div class="card-footer">
+        <div class="position-indicators">
+          <div
+            *ngFor="let step of frases; let i = index"
+            class="indicator"
+            [ngClass]="{ 'active': i === currentStepIndex }"
+            [ngStyle]="{ 'background-color': i === currentStepIndex ? currentStep.bgcolor : '#c7c5c5' }"
+            (click)="goStep(i)">
+          </div>
+        </div>
+        <div class="prev_next">
+        <button *ngIf="currentStepIndex !== 0" (click)="prevStep()">←</button>
+        <button *ngIf="currentStepIndex !== frases.length - 1" (click)="nextStep()">→</button>
+    </div>
