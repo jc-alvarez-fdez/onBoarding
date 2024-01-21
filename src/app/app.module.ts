@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { EscenaComponent } from './escena/escena.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +15,8 @@ import { EscenaComponent } from './escena/escena.component';
     EscenaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

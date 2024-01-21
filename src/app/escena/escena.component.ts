@@ -1,11 +1,26 @@
 import { Component, Input } from '@angular/core';
 import { IStep } from '../interfaces/i-step-interface';
 
+import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
+
 @Component({
   selector: 'app-escena',
   templateUrl: './escena.component.html',
-  styleUrls: ['./escena.component.scss']
+  styleUrls: ['./escena.component.scss'],
+  animations: [
+    trigger('slideInOut', [
+      transition(':enter', [
+        query('.card-header, .card-body, .card-footer', [
+          style({ opacity: 0, transform: 'translateX(-100%)' }),
+          stagger(100, [
+            animate('0.5s ease-out', style({ opacity: 1, transform: 'translateX(0%)' })),
+          ]),
+        ], { optional: true }), // Agrega { optional: true } aquí
+      ]),
+    ]),
+  ],
 })
+
 export class EscenaComponent {
 
   @Input() frases!: IStep[]; // Entrada de las frases desde el componente padre

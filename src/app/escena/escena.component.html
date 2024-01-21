@@ -1,13 +1,13 @@
 
 <div class="container-fluid">
-  <div class="card">
-    <div class="card-header" [ngStyle]="{ 'background-color': currentStep.bgcolor }">
-      <img src="{{ currentStep.img }}" class="card-img-top" alt="{{ currentStep.alt }}">
-    </div>
-    <div class="card-body">
-      <h3 class="card-title" [ngStyle]="{ 'color': currentStep.bgcolor }">{{ currentStep.title }} </h3>
-      <p class="card-text">{{ currentStep.description }}</p>
-    </div>
+  <div class="card" [@slideInOut]>
+      <div class="card-header" [ngStyle]="{ 'background-color': currentStep.bgcolor }">
+        <img src="{{ currentStep.img }}" class="card-img-top" alt="{{ currentStep.alt }}">
+      </div>
+      <div class="card-body">
+        <h3 class="card-title" [ngStyle]="{ 'color': currentStep.bgcolor }">{{ currentStep.title }} </h3>
+        <p class="card-text">{{ currentStep.description }}</p>
+      </div>
     <div class="card-footer">
         <div class="position-indicators">
           <div
