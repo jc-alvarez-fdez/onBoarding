@@ -1,3 +1,25 @@
+/*
+@keyframes anima-imagen {
+  0% {
+    width: 100%;
+    opacity: 25%;
+  }
+  100% {
+    width: 75%;
+    opacity: 100%;
+  }
+}
+ */
+@keyframes desliza {
+  0% {
+    transform: translateX(150%);
+    opacity: 25%;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 100%;
+  }
+}
 
 .card {
   width: 80%;
@@ -17,9 +39,21 @@
   flex-wrap: wrap;
 }
 
+.desliza-textos {
+  animation-name: desliza;
+  animation-duration: .5s;
+}
 
-.card-header img {
+.desliza-textos2 {
+  animation-name: desliza;
+  animation-duration: .5s;
+  animation-delay: .3s;
+}
+
+.card-img-top  {
   width: 75%;
+
+
 }
 
 .card-body {
