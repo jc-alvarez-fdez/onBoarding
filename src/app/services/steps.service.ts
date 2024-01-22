@@ -6,7 +6,7 @@ import { IStep } from '../interfaces/i-step-interface';
 })
 export class StepsService {
 
-  public pathImg: string = "../assets/images"; // Creo una variable para la ruta de las imágenes
+  public pathImg: string = "../assets/images"; 
 
   public frases: IStep[] = [
 

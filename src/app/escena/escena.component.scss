@@ -1,4 +1,4 @@
-/*
+
 @keyframes anima-imagen {
   0% {
     width: 100%;
@@ -9,7 +9,7 @@
     opacity: 100%;
   }
 }
- */
+
 @keyframes desliza {
   0% {
     transform: translateX(150%);
@@ -19,6 +19,21 @@
     transform: translateX(0%);
     opacity: 100%;
   }
+}
+.card-img-top {
+  animation-name: anima-imagen;
+  animation-duration: .5s;
+}
+
+.card-title {
+  animation-name: desliza;
+  animation-duration: .5s;
+}
+
+.card-text {
+  animation-name: desliza;
+  animation-duration: .5s;
+  animation-delay: .3s;
 }
 
 .card {
@@ -39,16 +54,6 @@
   flex-wrap: wrap;
 }
 
-.desliza-textos {
-  animation-name: desliza;
-  animation-duration: .5s;
-}
-
-.desliza-textos2 {
-  animation-name: desliza;
-  animation-duration: .5s;
-  animation-delay: .3s;
-}
 
 .card-img-top  {
   width: 75%;

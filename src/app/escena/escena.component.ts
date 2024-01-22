@@ -7,7 +7,7 @@ import { trigger, transition, style, animate, query, stagger } from '@angular/an
   selector: 'app-escena',
   templateUrl: './escena.component.html',
   styleUrls: ['./escena.component.scss'],
-  animations: [
+/*   animations: [
     trigger('slideInOut', [
       transition(':enter', [
         query('.card-header, .card-body, .card-footer', [
@@ -15,37 +15,37 @@ import { trigger, transition, style, animate, query, stagger } from '@angular/an
           stagger(100, [
             animate('0.5s ease-out', style({ opacity: 1, transform: 'translateX(0%)' })),
           ]),
-        ], { optional: true }), // Agrega { optional: true } aquí
+        ], { optional: true }),
       ]),
     ]),
-  ],
+  ], */
 })
 
 export class EscenaComponent {
 
-  @Input() frases!: IStep[]; // Entrada de las frases desde el componente padre
-  @Input() currentStepIndex: number = 0; // Índice de la frase actual
+  @Input() frases!: IStep[];
+  @Input() currentStepIndex: number = 0;
 
-  // Getter para obtener la frase actual
+
   get currentStep(): IStep {
     return this.frases[this.currentStepIndex];
   }
 
-  // Método para avanzar a la siguiente frase
+
   nextStep(): void {
     if (this.currentStepIndex < this.frases.length - 1) {
       this.currentStepIndex++;
     }
   }
 
-  // Método para retroceder a la frase anterior
+
   prevStep(): void {
     if (this.currentStepIndex > 0) {
       this.currentStepIndex--;
     }
   }
 
-  // Método para ir directamente a una frase específica
+
   goStep(index: number): void {
     if(index >= 0 && index < this.frases.length) {
       this.currentStepIndex = index;
